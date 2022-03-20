@@ -1,0 +1,69 @@
+.slick-slide {
+	transition: transform 0.6s linear;
+}
+
+/* slide when active (when play first to last) */
+.slick-center {
+	transform: scale(1.2);
+}
+
+/* slide when active (when play last to first) */
+.slick-slide[aria-hidden="true"]:not([tabindex="-1"])
+	+ .slick-cloned[aria-hidden="true"] {
+	transform: scale(1.2);
+}
+
+/* change color on center */
+.slick-slide > div > div > div > div:nth-child(2) > span > img {
+	opacity: 0;
+	filter: var(--filter);
+	transition: opacity 0.6s linear;
+}
+.slick-center > div > div > div > div:nth-child(2) > span > img {
+	opacity: 1;
+}
+.slick-center > div > div > div > div:nth-child(1) > span > img {
+	opacity: 0;
+}
+.slick-slide > div > div > div > div:nth-child(1) > span > img {
+	transition: opacity 0.6s linear;
+}
+
+/* background blur */
+.slick-slide > div > div > div {
+	position: relative;
+}
+.slick-slide > div > div > div::before {
+	position: relative;
+	transition: opacity 0.6s linear;
+}
+.slick-slide.slick-center > div > div > div::before {
+	opacity: 1;
+}
+.slick-slide > div > div > div::before {
+	content: "";
+	background: var(--gradient);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(4px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	border-radius: 10px;
+	opacity: 0;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}

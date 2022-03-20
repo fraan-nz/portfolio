@@ -1,116 +1,151 @@
-.container {
-  padding: 0 2rem;
+.home {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.home__title {
+	text-align: center;
+	position: relative;
+	color: var(--white);
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.home__title > h1 {
+	font-size: 5.5rem;
+	font-family: "Neon Planet Display";
+	line-height: 1.5;
+	letter-spacing: 2px;
+	filter: var(--dropShadow);
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.letter__n {
+	position: relative;
+}
+.letter__n::before {
+	content: "-";
+	position: absolute;
+	top: -30px;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.home__title > h2 {
+	font-size: 5rem;
+	font-family: "Neon Planet Script";
+	transform: rotate(-7deg);
+	filter: var(--dropShadow);
+	z-index: 10;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.letter__flick {
+	animation: flick 2s linear infinite;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.letter__flick2 {
+	animation: flick2 2s linear alternate infinite;
 }
 
-.title,
-.description {
-  text-align: center;
+@media screen and (max-width: 970px) {
+	.home__title > h1 {
+		font-size: 4.5rem;
+	}
+
+	.letter__n::before {
+		top: -25px;
+	}
+
+	.home__title > h2 {
+		font-size: 4rem;
+		right: 2px;
+		top: 47px;
+	}
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+@media screen and (max-width: 740px) {
+	.home__title::before {
+		display: none;
+	}
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+@media screen and (max-width: 575px) {
+	.home__title > h1 {
+		width: 220px;
+		line-height: 1.2;
+		font-size: 2.8rem;
+	}
+
+	.letter__n::before {
+		top: -10px;
+	}
+
+	.home__title > h2 {
+		font-size: 1.7rem;
+		right: 30px;
+		top: 100px;
+	}
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+@keyframes flick {
+	0% {
+		opacity: 0.1;
+	}
+	2% {
+		opacity: 0.1;
+	}
+	4% {
+		opacity: 1;
+	}
+
+	19% {
+		opacity: 1;
+	}
+	21% {
+		opacity: 0.1;
+	}
+	23% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+	83% {
+		opacity: 0.4;
+	}
+	87% {
+		opacity: 1;
+	}
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
+@keyframes flick2 {
+	5% {
+		opacity: 0.1;
+	}
+	7% {
+		opacity: 0.1;
+	}
+	9% {
+		opacity: 1;
+	}
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
+	24% {
+		opacity: 1;
+	}
+	26% {
+		opacity: 0.1;
+	}
+	28% {
+		opacity: 1;
+	}
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+	85% {
+		opacity: 1;
+	}
+	87% {
+		opacity: 0.4;
+	}
+	92% {
+		opacity: 1;
+	}
 }
