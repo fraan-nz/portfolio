@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../../styles/navbar.module.css";
+import { motion } from "framer-motion";
+import { flick2, menuOpen } from "../../helpers/framer";
+import Burger from "../Burger/Burger";
 
 const navLinks = [
 	{ title: "Sobre mí", path: "#about" },
@@ -12,6 +15,7 @@ const navLinks = [
 function NavBar({ activeSection, setTheme }) {
 	const [scrolling, setScrolling] = useState(false);
 	const [checked, setChecked] = useState("pink-theme");
+	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
 		const changeNavbar = () => {
@@ -30,6 +34,7 @@ function NavBar({ activeSection, setTheme }) {
 		setTheme(e.target.value);
 		setChecked(e.target.value);
 	};
+
 	return (
 		<nav className={scrolling ? styles.navbar__scroll : styles.navbar}>
 			<div className={styles.navbar__content}>
@@ -41,7 +46,11 @@ function NavBar({ activeSection, setTheme }) {
 							onChange={changeTheme}
 							checked={checked === "pink-theme"}
 						/>
-						<div className={styles.navbar__btnpink}></div>
+						<motion.div
+							animate={checked === "pink-theme" ? "visible" : ""}
+							variants={flick2}
+							className={styles.navbar__btnpink}
+						></motion.div>
 					</label>
 					<label>
 						<input
@@ -50,7 +59,11 @@ function NavBar({ activeSection, setTheme }) {
 							onChange={changeTheme}
 							checked={checked === "violet-theme"}
 						/>
-						<div className={styles.navbar__btnviolet}></div>
+						<motion.div
+							animate={checked === "violet-theme" ? "visible" : ""}
+							variants={flick2}
+							className={styles.navbar__btnviolet}
+						></motion.div>
 					</label>
 					<label>
 						<input
@@ -59,9 +72,35 @@ function NavBar({ activeSection, setTheme }) {
 							onChange={changeTheme}
 							checked={checked === "green-theme"}
 						/>
-						<div className={styles.navbar__btngreen}></div>
+						<motion.div
+							animate={checked === "green-theme" ? "visible" : ""}
+							variants={flick2}
+							className={styles.navbar__btngreen}
+						></motion.div>
 					</label>
 				</div>
+				<Burger isOpen={open} setOpen={setOpen} />
+				<motion.ul
+					animate={open ? "open" : "close"}
+					variants={menuOpen}
+					className={styles.navbar__linksMobile}
+				>
+					{navLinks.map((link) => (
+						<li key={link.title}>
+							<Link href={link.path} scroll={false}>
+								<a
+									className={
+										activeSection === link.path.slice(1)
+											? styles.navbar__active
+											: styles.navbar__link
+									}
+								>
+									{link.title}
+								</a>
+							</Link>
+						</li>
+					))}
+				</motion.ul>
 				<ul className={styles.navbar__links}>
 					{navLinks.map((link) => (
 						<li key={link.title}>

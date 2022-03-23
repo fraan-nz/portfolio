@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import styles from "../../styles/skills.module.css";
 import Image from "next/image";
 import Slider from "react-slick";
 import { skills } from "./skill";
+import styles from "../../styles/skills.module.css";
+import titles from "../../styles/titles.module.css";
 
 function Skills({ createObserver }) {
 	const el = useRef(null);
@@ -41,7 +42,7 @@ function Skills({ createObserver }) {
 	return (
 		<section id="skills" ref={el} className={styles.skills}>
 			<div className={styles.skills__content}>
-				<h3 className={styles.skills__title}>Tecnologías</h3>
+				<h3 className={titles.section__title}>Tecnologías</h3>
 
 				<Slider {...settings} className={styles.skills__slider}>
 					{skills.map((skill) => (

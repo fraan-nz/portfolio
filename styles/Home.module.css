@@ -38,14 +38,6 @@
 	z-index: 10;
 }
 
-.letter__flick {
-	animation: flick 2s linear infinite;
-}
-
-.letter__flick2 {
-	animation: flick2 2s linear alternate infinite;
-}
-
 @media screen and (max-width: 970px) {
 	.home__title > h1 {
 		font-size: 4.5rem;
@@ -68,7 +60,11 @@
 	}
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 595px) {
+	.home__title {
+		margin-bottom: 15vh;
+	}
+
 	.home__title > h1 {
 		width: 220px;
 		line-height: 1.2;
@@ -83,69 +79,5 @@
 		font-size: 1.7rem;
 		right: 30px;
 		top: 100px;
-	}
-}
-
-@keyframes flick {
-	0% {
-		opacity: 0.1;
-	}
-	2% {
-		opacity: 0.1;
-	}
-	4% {
-		opacity: 1;
-	}
-
-	19% {
-		opacity: 1;
-	}
-	21% {
-		opacity: 0.1;
-	}
-	23% {
-		opacity: 1;
-	}
-
-	80% {
-		opacity: 1;
-	}
-	83% {
-		opacity: 0.4;
-	}
-	87% {
-		opacity: 1;
-	}
-}
-
-@keyframes flick2 {
-	5% {
-		opacity: 0.1;
-	}
-	7% {
-		opacity: 0.1;
-	}
-	9% {
-		opacity: 1;
-	}
-
-	24% {
-		opacity: 1;
-	}
-	26% {
-		opacity: 0.1;
-	}
-	28% {
-		opacity: 1;
-	}
-
-	85% {
-		opacity: 1;
-	}
-	87% {
-		opacity: 0.4;
-	}
-	92% {
-		opacity: 1;
 	}
 }

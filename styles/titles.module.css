@@ -1,0 +1,32 @@
+.section__title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 50px;
+	background-image: var(--gradient);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: glow 5s linear infinite;
+	background-size: 150%;
+}
+
+@keyframes glow {
+	0% {
+		background-position: 0% 43%;
+	}
+	33% {
+		background-position: 100% 58%;
+	}
+	66% {
+		background-position: 58% 100%;
+	}
+	100% {
+		background-position: 0% 43%;
+	}
+}
+
+@media screen and (max-width: 595px) {
+	.section__title {
+		font-size: 2rem;
+		margin-bottom: 25px;
+	}
+}

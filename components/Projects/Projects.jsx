@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/projects.module.css";
+import titles from "../../styles/titles.module.css";
 import { projects } from "./project";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +18,7 @@ function Projects({ createObserver }) {
 	return (
 		<section id="projects" ref={el} className={styles.projects}>
 			<div className={styles.projects__content}>
-				<h3 className={styles.projects__title}>Proyectos</h3>
+				<h3 className={titles.section__title}>Proyectos</h3>
 				{projects.map((project) => (
 					<article key={project.title} className={styles.project}>
 						<div className={styles.project__imgwrap}>

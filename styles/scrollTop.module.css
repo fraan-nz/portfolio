@@ -1,0 +1,13 @@
+.scrollTop {
+	font-size: 2rem;
+	color: var(--white);
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	filter: var(--iconDropShadow);
+}
+@media screen and (max-width: 1120px) {
+	.scrollTop {
+		right: 10px;
+	}
+}

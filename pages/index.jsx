@@ -5,6 +5,9 @@ import Home from "../components/Home/Home";
 import NavBar from "../components/NavBar/NavBar";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
+import Contact from "../components/Contact/Contact";
+import ScrollTop from "../components/ScrollTop/ScrollTop";
+import Social from "../components/Social/Social";
 
 export default function Portfolio() {
 	const [activeSection, setActiveSection] = useState("");
@@ -40,18 +43,9 @@ export default function Portfolio() {
 				<Projects createObserver={createObserver} />
 
 				<Skills createObserver={createObserver} />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
+				<Contact createObserver={createObserver} />
+				<Social activeSection={activeSection} />
+				{!(activeSection === "home") ? <ScrollTop /> : null}
 			</main>
 		</>
 	);

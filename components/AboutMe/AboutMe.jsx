@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styles from "../../styles/about.module.css";
+import titles from "../../styles/titles.module.css";
 
 function AboutMe({ createObserver }) {
 	const el = useRef(null);
@@ -11,7 +12,7 @@ function AboutMe({ createObserver }) {
 			<div id="about" className={styles.about__offset}></div>
 			<section ref={el} id="about" className={styles.about}>
 				<div className={styles.about__content}>
-					<h3 className={styles.about__title}>Hola!</h3>
+					<h3 className={titles.section__title}>Hola!</h3>
 					<p className={styles.about__text}>
 						Soy Franco Nuñez, un apasionado por la tecnología y los video
 						juegos.
