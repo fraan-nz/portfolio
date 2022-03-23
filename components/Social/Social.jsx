@@ -17,6 +17,7 @@ function Social({ activeSection }) {
 							variants={flick}
 							className={styles.social__icon}
 							target="_blank"
+							aria-label="Linkedin link"
 						>
 							<FontAwesomeIcon icon={faLinkedin} />
 						</motion.a>
@@ -27,6 +28,7 @@ function Social({ activeSection }) {
 							variants={flick2}
 							className={styles.social__icon}
 							target="_blank"
+							aria-label="GitHub link"
 						>
 							<FontAwesomeIcon icon={faGithubSquare} />
 						</motion.a>
@@ -40,6 +42,7 @@ function Social({ activeSection }) {
 							variants={flick}
 							className={styles.social__icon}
 							target="_blank"
+							aria-label="Linkedin link"
 						>
 							<FontAwesomeIcon icon={faLinkedin} />
 						</motion.a>
@@ -50,6 +53,7 @@ function Social({ activeSection }) {
 							variants={flick2}
 							className={styles.social__icon}
 							target="_blank"
+							aria-label="GitHub link"
 						>
 							<FontAwesomeIcon icon={faGithubSquare} />
 						</motion.a>

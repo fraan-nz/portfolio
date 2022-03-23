@@ -20,6 +20,7 @@
 	justify-content: flex-start;
 	gap: 50px;
 	position: relative;
+	margin-top: 50px;
 }
 
 .project__imgwrap {
@@ -187,8 +188,12 @@
 @media screen and (max-width: 595px) {
 	.projects__content {
 		padding-top: 40px;
-		padding-bottom: 15vh;
+		padding-bottom: 5vh;
 		padding-inline: 20px;
+	}
+
+	.project {
+		margin-bottom: 40px;
 	}
 
 	.project__imgwrap {
@@ -207,6 +212,10 @@
 }
 
 @media screen and (max-width: 380px) {
+	.project {
+		margin-bottom: 100px;
+	}
+
 	.project__img {
 		object-fit: contain;
 		object-position: center top;

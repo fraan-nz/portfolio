@@ -8,6 +8,12 @@
 	backdrop-filter: blur(8px);
 }
 
+.skills__offset {
+	visibility: hidden;
+	position: relative;
+	top: -5vh;
+}
+
 .skills__content {
 	width: 100%;
 	max-width: 1024px;

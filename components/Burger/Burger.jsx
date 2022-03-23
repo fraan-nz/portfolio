@@ -5,7 +5,13 @@ import { burgerTop, burgerMid, burgerBottom } from "../../helpers/framer";
 
 function Burger({ isOpen, setOpen }) {
 	return (
-		<div onClick={() => setOpen((prev) => !prev)} className={styles.burger}>
+		<div
+			onClick={() => setOpen((prev) => !prev)}
+			className={styles.burger}
+			aria-label="menu"
+			role="button"
+			tabIndex="1"
+		>
 			<motion.div
 				animate={isOpen ? "open" : ""}
 				variants={burgerTop}

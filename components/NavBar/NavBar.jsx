@@ -81,14 +81,17 @@ function NavBar({ activeSection, setTheme }) {
 				</div>
 				<Burger isOpen={open} setOpen={setOpen} />
 				<motion.ul
+					initial="close"
 					animate={open ? "open" : "close"}
 					variants={menuOpen}
 					className={styles.navbar__linksMobile}
 				>
-					{navLinks.map((link) => (
+					{navLinks.map((link, index) => (
 						<li key={link.title}>
 							<Link href={link.path} scroll={false}>
 								<a
+									onClick={() => setOpen((prev) => !prev)}
+									tabIndex={index + 1}
 									className={
 										activeSection === link.path.slice(1)
 											? styles.navbar__active
@@ -102,10 +105,11 @@ function NavBar({ activeSection, setTheme }) {
 					))}
 				</motion.ul>
 				<ul className={styles.navbar__links}>
-					{navLinks.map((link) => (
+					{navLinks.map((link, index) => (
 						<li key={link.title}>
 							<Link href={link.path} scroll={false}>
 								<a
+									tabIndex={index + 1}
 									className={
 										activeSection === link.path.slice(1)
 											? styles.navbar__active

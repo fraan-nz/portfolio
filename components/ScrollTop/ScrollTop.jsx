@@ -9,7 +9,12 @@ import { flick } from "../../helpers/framer";
 function ScrollTop() {
 	return (
 		<Link href="#home" passHref>
-			<motion.a animate="visible" variants={flick} className={styles.scrollTop}>
+			<motion.a
+				animate="visible"
+				variants={flick}
+				className={styles.scrollTop}
+				aria-label="scroll to top"
+			>
 				<FontAwesomeIcon icon={faArrowUp} />
 			</motion.a>
 		</Link>

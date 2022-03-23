@@ -8,15 +8,15 @@ export default async function handler(req, res) {
 		port: 465,
 		secure: true,
 		auth: {
-			user: process.env.EMAIL,
-			pass: process.env.PASS,
+			user: process.env.NEXT_PUBLIC_EMAIL,
+			pass: process.env.NEXT_PUBLIC_PASS,
 		},
 	});
 
 	try {
 		const responseEmail = await transporter.sendMail({
 			from: email,
-			to: process.env.EMAIL,
+			to: process.env.NEXT_PUBLIC_EMAIL,
 			subject: "Portfolio Menssage",
 			html: `
 <h1>Nuevo mensaje desde mi portfolio</h1><br>

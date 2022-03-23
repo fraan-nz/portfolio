@@ -40,36 +40,40 @@ function Skills({ createObserver }) {
 	};
 
 	return (
-		<section id="skills" ref={el} className={styles.skills}>
-			<div className={styles.skills__content}>
-				<h3 className={titles.section__title}>Tecnologías</h3>
+		<>
+			<div id="skills" className={styles.skills__offset}></div>
+			<section id="skills" ref={el} className={styles.skills}>
+				<div className={styles.skills__content}>
+					<h3 className={titles.section__title}>Tecnologías</h3>
 
-				<Slider {...settings} className={styles.skills__slider}>
-					{skills.map((skill) => (
-						<div key={skill.name} className={styles.skills__skillwraper}>
-							<div className={styles.skills__skill}>
-								<div className={styles.skills__imgwrap}>
-									<Image
-										src={`/images/techs/${skill.name}.png`}
-										layout="fill"
-										className={styles.skills__img}
-										alt={`${skill.alt} logo`}
-									/>
-								</div>
-								<div className={styles.skills__imgwrapfilter}>
-									<Image
-										src={`/images/techs/${skill.name}.png`}
-										layout="fill"
-										className={styles.skills__img}
-										alt={`${skill.alt} logo`}
-									/>
+					<Slider {...settings} className={styles.skills__slider}>
+						{skills.map((skill) => (
+							<div key={skill.name} className={styles.skills__skillwraper}>
+								<div className={styles.skills__skill}>
+									<div className={styles.skills__imgwrap}>
+										<Image
+											src={`/images/techs/${skill.name}.png`}
+											layout="fill"
+											className={styles.skills__img}
+											alt={`${skill.alt} logo`}
+										/>
+									</div>
+									<div className={styles.skills__imgwrapfilter}>
+										<Image
+											src={`/images/techs/${skill.name}.png`}
+											layout="fill"
+											className={styles.skills__img}
+											alt={`${skill.alt} logo`}
+											loading="lazy"
+										/>
+									</div>
 								</div>
 							</div>
-						</div>
-					))}
-				</Slider>
-			</div>
-		</section>
+						))}
+					</Slider>
+				</div>
+			</section>
+		</>
 	);
 }
 

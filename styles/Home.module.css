@@ -15,7 +15,7 @@
 
 .home__title > h1 {
 	font-size: 5.5rem;
-	font-family: "Neon Planet Display";
+	font-family: "Neon Planet Display", sans-serif;
 	line-height: 1.5;
 	letter-spacing: 2px;
 	filter: var(--dropShadow);
@@ -32,7 +32,7 @@
 
 .home__title > h2 {
 	font-size: 5rem;
-	font-family: "Neon Planet Script";
+	font-family: "Neon Planet Script", sans-serif;
 	transform: rotate(-7deg);
 	filter: var(--dropShadow);
 	z-index: 10;
@@ -69,6 +69,7 @@
 		width: 220px;
 		line-height: 1.2;
 		font-size: 2.8rem;
+		filter: var(--iconDropShadow);
 	}
 
 	.letter__n::before {
@@ -79,5 +80,6 @@
 		font-size: 1.7rem;
 		right: 30px;
 		top: 100px;
+		filter: var(--iconDropShadow);
 	}
 }

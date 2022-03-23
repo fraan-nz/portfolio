@@ -23,7 +23,7 @@ const schema = yup
 	})
 	.required();
 
-function Contact({ createObserver }) {
+function Contact({ createObserver, activeSection }) {
 	const {
 		register,
 		handleSubmit,
@@ -33,6 +33,13 @@ function Contact({ createObserver }) {
 		resolver: yupResolver(schema),
 	});
 
+	const input = useRef(null);
+	useEffect(() => {
+		if (activeSection && activeSection === "contact") {
+			input.current.focus();
+		}
+	}, [activeSection]);
+
 	const el = useRef(null);
 	useEffect(() => {
 		createObserver(el.current);
@@ -41,7 +48,7 @@ function Contact({ createObserver }) {
 	const onSubmitForm = async (formValues) => {
 		let config = {
 			method: "POST",
-			url: process.env.API_URL,
+			url: process.env.NEXT_PUBLIC_API_URL,
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -70,11 +77,18 @@ function Contact({ createObserver }) {
 						<input
 							type="text"
 							name="name"
+							id="name"
 							autoComplete="off"
 							className={styles.contact__input}
 							{...register("name")}
 						/>
-						<span className={styles.input__placeholder}>Nombre</span>
+						<label
+							ref={input}
+							htmlFor="name"
+							className={styles.input__placeholder}
+						>
+							Nombre
+						</label>
 						<span className={styles.contact__error}>
 							{errors?.name?.message}
 						</span>
@@ -84,11 +98,14 @@ function Contact({ createObserver }) {
 						<input
 							type="text"
 							name="email"
+							id="email"
 							autoComplete="off"
 							className={styles.contact__input}
 							{...register("email")}
 						/>
-						<span className={styles.input__placeholder}>Email</span>
+						<label htmlFor="email" className={styles.input__placeholder}>
+							Email
+						</label>
 						<span className={styles.contact__error}>
 							{errors?.email?.message}
 						</span>
@@ -97,12 +114,15 @@ function Contact({ createObserver }) {
 					<div className={styles.input__wrapper}>
 						<textarea
 							name="message"
+							id="message"
 							rows="10"
 							autoComplete="off"
 							className={styles.contact__textarea}
 							{...register("message")}
 						></textarea>
-						<span className={styles.input__placeholder}>Mensaje...</span>
+						<label htmlFor="message" className={styles.input__placeholder}>
+							Mensaje...
+						</label>
 						<span className={styles.contact__msgerror}>
 							{errors?.message?.message}
 						</span>

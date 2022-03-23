@@ -38,12 +38,13 @@ export default function Portfolio() {
 			<NavBar activeSection={activeSection} setTheme={setTheme} />
 			<main>
 				<Home createObserver={createObserver} />
-
 				<AboutMe createObserver={createObserver} />
 				<Projects createObserver={createObserver} />
-
 				<Skills createObserver={createObserver} />
-				<Contact createObserver={createObserver} />
+				<Contact
+					createObserver={createObserver}
+					activeSection={activeSection}
+				/>
 				<Social activeSection={activeSection} />
 				{!(activeSection === "home") ? <ScrollTop /> : null}
 			</main>
