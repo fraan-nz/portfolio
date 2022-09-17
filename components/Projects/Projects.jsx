@@ -9,58 +9,61 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-function Projects({ createObserver }) {
+function Projects({ createObserverBigSection }) {
 	const el = useRef(null);
 	useEffect(() => {
-		createObserver(el.current);
-	}, [createObserver]);
+		createObserverBigSection(el.current);
+	}, [createObserverBigSection]);
 
 	return (
-		<section id="projects" ref={el} className={styles.projects}>
-			<div className={styles.projects__content}>
-				<h3 className={titles.section__title}>Proyectos</h3>
-				{projects.map((project) => (
-					<article key={project.title} className={styles.project}>
-						<div className={styles.project__imgwrap}>
-							<Image
-								src={project.image}
-								layout="fill"
-								className={styles.project__img}
-								alt={project.title}
-								priority
-							/>
-						</div>
+		<>
+			<div id="projects" className={styles.projects__offset}></div>
+			<section id="projects" ref={el} className={styles.projects}>
+				<div className={styles.projects__content}>
+					<h3 className={titles.section__title}>Proyectos</h3>
+					{projects.map((project) => (
+						<article key={project.title} className={styles.project}>
+							<div className={styles.project__imgwrap}>
+								<Image
+									src={project.image}
+									layout="fill"
+									className={styles.project__img}
+									alt={project.title}
+									priority
+								/>
+							</div>
 
-						<div className={styles.project__descwraper}>
-							<div className={styles.project__desc}>
-								<h4 className={styles.project__title}>{project.title}</h4>
-								<p className={styles.project__text}>{project.desc}</p>
-								<div className={styles.project__techs}>
-									{project.tech.map((tech) => (
-										<p key={tech}>{tech}</p>
-									))}
+							<div className={styles.project__descwraper}>
+								<div className={styles.project__desc}>
+									<h4 className={styles.project__title}>{project.title}</h4>
+									<p className={styles.project__text}>{project.desc}</p>
+									<div className={styles.project__techs}>
+										{project.tech.map((tech) => (
+											<p key={tech}>{tech}</p>
+										))}
+									</div>
+								</div>
+
+								<div className={styles.project__links}>
+									<Link href={project.github}>
+										<a className={styles.project__link} target="_blank">
+											<FontAwesomeIcon icon={faGithub} />
+											<p>GitHub</p>
+										</a>
+									</Link>
+									<Link href={project.site}>
+										<a className={styles.project__link} target="_blank">
+											<FontAwesomeIcon icon={faGlobe} />
+											<p>Deploy</p>
+										</a>
+									</Link>
 								</div>
 							</div>
-
-							<div className={styles.project__links}>
-								<Link href={project.github}>
-									<a className={styles.project__link} target="_blank">
-										<FontAwesomeIcon icon={faGithub} />
-										<p>GitHub</p>
-									</a>
-								</Link>
-								<Link href={project.site}>
-									<a className={styles.project__link} target="_blank">
-										<FontAwesomeIcon icon={faGlobe} />
-										<p>Deploy</p>
-									</a>
-								</Link>
-							</div>
-						</div>
-					</article>
-				))}
-			</div>
-		</section>
+						</article>
+					))}
+				</div>
+			</section>
+		</>
 	);
 }
 

@@ -1,13 +1,15 @@
-.scrollTop {
-	font-size: 2rem;
-	color: var(--white);
+.scrollTopWrapper {
 	position: fixed;
 	right: 40px;
 	bottom: 40px;
-	filter: var(--iconDropShadow);
+}
+
+.scrollTop {
+	font-size: 2rem;
+	color: var(--primary);
 }
 @media screen and (max-width: 1120px) {
-	.scrollTop {
+	.scrollTopWrapper {
 		right: 10px;
 	}
 }

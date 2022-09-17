@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/burger.module.css";
 import { motion } from "framer-motion";
-import { burgerTop, burgerMid, burgerBottom } from "../../helpers/framer";
+import { burgerTop, burgerMid, burgerBottom } from "../../framer/framer";
 
 function Burger({ isOpen, setOpen }) {
 	return (

@@ -173,8 +173,15 @@
 	.contact__content {
 		max-width: 100%;
 		padding-inline: 60px;
+		padding-block: 80px;
 	}
 }
+@media screen and (max-height: 600px) {
+	.contact__content {
+		padding-block: 30px;
+	}
+}
+
 @media screen and (max-width: 595px) {
 	.contact__content {
 		padding-block: 40px;

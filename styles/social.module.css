@@ -22,8 +22,7 @@
 
 .social__icon {
 	font-size: 2rem;
-	color: var(--white);
-	filter: var(--iconDropShadow);
+	color: var(--primary);
 }
 
 @media screen and (max-width: 1120px) {

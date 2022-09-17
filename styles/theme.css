@@ -1,30 +1,18 @@
 :root {
 	--black: #0c0f0a;
 	--white: #f0f0f0;
-	--primary: #ff4d94;
+	--primary: #7dd832;
+	--ligthPrimary: #94d469;
 	--gradient: linear-gradient(
 		45deg,
-		#f0f0f0 0%,
-		#ff80b3 20%,
-		#ff4d94 45%,
-		#ff0066 100%
+		#94d469 0%,
+		#7dd832 25%,
+		#57d304 50%,
+		#7dd832 75%,
+		#94d469 100%
 	);
-	--gradientFull: linear-gradient(
-		45deg,
-		#ff80b3 0%,
-		#ff4d94 25%,
-		#ff0066 50%,
-		#ff4d94 75%,
-		#ff80b3 100%
-	);
-	--dropShadow: drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 7px #fff)
-		drop-shadow(0px 0px 10px #ff80b3) drop-shadow(0px 0px 25px #ff4d94)
-		drop-shadow(0px 0px 50px #ff0066);
-	--iconDropShadow: drop-shadow(0px 0px 2px #fff)
-		drop-shadow(0px 0px 7px #ff80b3) drop-shadow(0px 0px 15px #ff4d94)
-		drop-shadow(0px 0px 55px #ff0066) brightness(1);
-	--filter: invert(42%) sepia(43%) saturate(1495%) hue-rotate(297deg)
-		brightness(101%) contrast(101%);
+	--filter: invert(60%) sepia(100%) saturate(321%) hue-rotate(50deg)
+		brightness(101%) contrast(95%);
 }
 
 .pink-theme {
@@ -40,12 +28,6 @@
 		#ff4d94 75%,
 		#ff80b3 100%
 	);
-	--dropShadow: drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 7px #fff)
-		drop-shadow(0px 0px 10px #ff80b3) drop-shadow(0px 0px 25px #ff4d94)
-		drop-shadow(0px 0px 50px #ff0066);
-	--iconDropShadow: drop-shadow(0px 0px 2px #fff)
-		drop-shadow(0px 0px 7px #ff80b3) drop-shadow(0px 0px 15px #ff4d94)
-		drop-shadow(0px 0px 55px #ff0066) brightness(1);
 	--filter: invert(42%) sepia(43%) saturate(1495%) hue-rotate(297deg)
 		brightness(101%) contrast(101%);
 }
@@ -63,12 +45,6 @@
 		#a746df 75%,
 		#bb80ff 100%
 	);
-	--dropShadow: drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 7px #fff)
-		drop-shadow(0px 0px 10px #bb80ff) drop-shadow(0px 0px 25px #a746df)
-		drop-shadow(0px 0px 50px #8e05dd);
-	--iconDropShadow: drop-shadow(0px 0px 2px #fff)
-		drop-shadow(0px 0px 7px #bb80ff) drop-shadow(0px 0px 15px #a746df)
-		drop-shadow(0px 0px 55px #8e05dd) brightness(1);
 	--filter: invert(24%) sepia(97%) saturate(7297%) hue-rotate(278deg)
 		brightness(75%) contrast(114%);
 }
@@ -86,12 +62,6 @@
 		#7dd832 75%,
 		#94d469 100%
 	);
-	--dropShadow: drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 7px #fff)
-		drop-shadow(0px 0px 10px #94d469) drop-shadow(0px 0px 25px #7dd832)
-		drop-shadow(0px 0px 50px #57d304);
-	--iconDropShadow: drop-shadow(0px 0px 2px #fff)
-		drop-shadow(0px 0px 7px #94d469) drop-shadow(0px 0px 15px #7dd832)
-		drop-shadow(0px 0px 55px #57d304) brightness(1);
 	--filter: invert(60%) sepia(100%) saturate(321%) hue-rotate(50deg)
 		brightness(101%) contrast(95%);
 }

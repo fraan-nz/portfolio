@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import styles from "../../styles/social.module.css";
 import { motion } from "framer-motion";
-import { flick, flick2 } from "../../helpers/framer";
+import { moveSocial } from "../../framer/framer";
 
 function Social({ activeSection }) {
 	return (
@@ -12,53 +12,50 @@ function Social({ activeSection }) {
 			{activeSection === "home" ? (
 				<div className={styles.social__wrapperMobile}>
 					<Link href="https://www.linkedin.com/in/fraan-nz/" passHref>
-						<motion.a
-							animate="visible"
-							variants={flick}
+						<a
 							className={styles.social__icon}
 							target="_blank"
 							aria-label="Linkedin link"
 						>
 							<FontAwesomeIcon icon={faLinkedin} />
-						</motion.a>
+						</a>
 					</Link>
 					<Link href="https://github.com/fraan-nz" passHref>
-						<motion.a
-							animate="visible"
-							variants={flick2}
+						<a
 							className={styles.social__icon}
 							target="_blank"
 							aria-label="GitHub link"
 						>
 							<FontAwesomeIcon icon={faGithubSquare} />
-						</motion.a>
+						</a>
 					</Link>
 				</div>
 			) : (
-				<div className={styles.social__wrapper}>
+				<motion.div
+					initial="hidden"
+					animate={activeSection !== "home" ? "visible" : "hidden"}
+					variants={moveSocial}
+					className={styles.social__wrapper}
+				>
 					<Link href="https://www.linkedin.com/in/fraan-nz/" passHref>
-						<motion.a
-							animate="visible"
-							variants={flick}
+						<a
 							className={styles.social__icon}
 							target="_blank"
 							aria-label="Linkedin link"
 						>
 							<FontAwesomeIcon icon={faLinkedin} />
-						</motion.a>
+						</a>
 					</Link>
 					<Link href="https://github.com/fraan-nz" passHref>
-						<motion.a
-							animate="visible"
-							variants={flick2}
+						<a
 							className={styles.social__icon}
 							target="_blank"
 							aria-label="GitHub link"
 						>
 							<FontAwesomeIcon icon={faGithubSquare} />
-						</motion.a>
+						</a>
 					</Link>
-				</div>
+				</motion.div>
 			)}
 		</>
 	);

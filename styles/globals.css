@@ -22,12 +22,6 @@ body {
 }
 
 @font-face {
-	font-family: "Neon Planet Display";
-	src: url("../public/fonts/NeonPlanetDisplay.ttf");
-	font-weight: bold;
-}
-
-@font-face {
 	font-family: "Neon Planet Script";
 	src: url("../public/fonts/NeonPlanetScript.ttf");
 	font-weight: bold;

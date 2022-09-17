@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../../styles/navbar.module.css";
 import { motion } from "framer-motion";
-import { flick2, menuOpen } from "../../helpers/framer";
+import { menuOpen } from "../../framer/framer";
 import Burger from "../Burger/Burger";
 
 const navLinks = [
@@ -14,7 +14,7 @@ const navLinks = [
 
 function NavBar({ activeSection, setTheme }) {
 	const [scrolling, setScrolling] = useState(false);
-	const [checked, setChecked] = useState("pink-theme");
+	const [checked, setChecked] = useState("green-theme");
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
@@ -46,11 +46,7 @@ function NavBar({ activeSection, setTheme }) {
 							onChange={changeTheme}
 							checked={checked === "pink-theme"}
 						/>
-						<motion.div
-							animate={checked === "pink-theme" ? "visible" : ""}
-							variants={flick2}
-							className={styles.navbar__btnpink}
-						></motion.div>
+						<div className={styles.navbar__btnpink}></div>
 					</label>
 					<label>
 						<input
@@ -59,11 +55,7 @@ function NavBar({ activeSection, setTheme }) {
 							onChange={changeTheme}
 							checked={checked === "violet-theme"}
 						/>
-						<motion.div
-							animate={checked === "violet-theme" ? "visible" : ""}
-							variants={flick2}
-							className={styles.navbar__btnviolet}
-						></motion.div>
+						<div className={styles.navbar__btnviolet}></div>
 					</label>
 					<label>
 						<input
@@ -72,11 +64,7 @@ function NavBar({ activeSection, setTheme }) {
 							onChange={changeTheme}
 							checked={checked === "green-theme"}
 						/>
-						<motion.div
-							animate={checked === "green-theme" ? "visible" : ""}
-							variants={flick2}
-							className={styles.navbar__btngreen}
-						></motion.div>
+						<div className={styles.navbar__btngreen}></div>
 					</label>
 				</div>
 				<Burger isOpen={open} setOpen={setOpen} />

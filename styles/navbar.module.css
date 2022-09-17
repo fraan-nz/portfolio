@@ -51,6 +51,7 @@
 
 .navbar__switch {
 	display: flex;
+	align-items: center;
 	gap: 10px;
 }
 
@@ -92,16 +93,19 @@
 }
 
 .navbar__switch > label > input:checked ~ .navbar__btnpink {
-	border-color: var(--white);
-	filter: var(--iconDropShadow);
+	/* border-color: var(--white);
+	filter: var(--iconDropShadow); */
+	filter: brightness(1);
 }
 .navbar__switch > label > input:checked ~ .navbar__btnviolet {
-	border-color: var(--white);
-	filter: var(--iconDropShadow);
+	/* border-color: var(--white);
+	filter: var(--iconDropShadow); */
+	filter: brightness(1);
 }
 .navbar__switch > label > input:checked ~ .navbar__btngreen {
-	border-color: var(--white);
-	filter: var(--iconDropShadow);
+	/* border-color: var(--white);
+	filter: var(--iconDropShadow); */
+	filter: brightness(1);
 }
 
 @media screen and (max-width: 768px) {

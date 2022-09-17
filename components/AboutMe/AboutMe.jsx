@@ -10,7 +10,7 @@ function AboutMe({ createObserver }) {
 	return (
 		<>
 			<div id="about" className={styles.about__offset}></div>
-			<section ref={el} id="about" className={styles.about}>
+			<section id="about" ref={el} className={styles.about}>
 				<div className={styles.about__content}>
 					<h3 className={titles.section__title}>Hola!</h3>
 					<p className={styles.about__text}>
